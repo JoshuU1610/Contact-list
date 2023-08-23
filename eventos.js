@@ -99,6 +99,8 @@ list.addEventListener('click', e => {
     }
 })
 
+
+// Evento donde llamamos los datos guardados en el localStorage a la pagina
 window.onload = () => {
     list.innerHTML = localStorage.getItem('listContacts');
 }
