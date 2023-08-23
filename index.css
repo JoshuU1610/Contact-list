@@ -1,0 +1,26 @@
+
+
+.input-text-message {
+    display: none;
+}
+
+.svg{
+    width: 1rem;
+    height: 1rem;
+}
+
+.rojo {
+    background-color: rgb(40, 148, 134);
+}
+
+.success {
+    outline: 2px solid rgb(0, 255, 0);
+}
+
+.error{
+    outline: 2px solid red;
+}
+
+.show {
+    display: block;
+}
