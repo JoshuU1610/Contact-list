@@ -5,8 +5,11 @@ const form = document.querySelector('#form');
 const list = document.querySelector('#list');
 
 
-const NUMBER_REGEX = /^((412)|(212))[0-9]{7}$/;
+const NUMBER_REGEX = /^((412)|(212)|(414)|(424)|(416)|(426))[0-9]{7}$/;
+const NAME_REGEX = a ;
 
+
+// Funcion creada para validar que lo que esta dentro del input este bien puesto
 const validar = (input, verification) => {
 
     if (nameValidation && numberValidation) {
@@ -32,21 +35,27 @@ const validar = (input, verification) => {
     }
 }
 
+
+// Variables para la validacion
 let numberValidation = false;
 let nameValidation = false;
 
+// Evento donde se llama al input del nombre 
 inputName.addEventListener('input', e => {
     // console.log(e.target.value);
     nameValidation = inputName.value.length >= 3;
     validar(inputName, nameValidation);
 });
 
+// Evento donde se llama al input del numero 
 inputNumber.addEventListener('input', e => {
     // console.log(e.target.value);
     numberValidation = NUMBER_REGEX.test(inputNumber.value);
     validar(inputNumber, numberValidation);
 });
 
+
+// Evento donde enviamos los datos a la lista para mostrarlos y guardarlos
 form.addEventListener('submit', e => {
     e.preventDefault();
     const li = document.createElement('li');
@@ -69,6 +78,7 @@ form.addEventListener('submit', e => {
 })
 
 
+// Evento para elminar y editar
 list.addEventListener('click', e => {
     if(e.target.closest('.delete-icon')){
         e.target.closest('.delete-icon').parentElement.remove();
