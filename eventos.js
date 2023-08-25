@@ -6,7 +6,7 @@ const list = document.querySelector('#list');
 
 
 const NUMBER_REGEX = /^((412)|(212)|(414)|(424)|(416)|(426))[0-9]{7}$/;
-const NAME_REGEX = a ;
+const NAME_REGEX = /a/;
 
 
 // Funcion creada para validar que lo que esta dentro del input este bien puesto
@@ -81,20 +81,46 @@ form.addEventListener('submit', e => {
 // Evento para elminar y editar
 list.addEventListener('click', e => {
     if(e.target.closest('.delete-icon')){
+
         e.target.closest('.delete-icon').parentElement.remove();
         localStorage.setItem('listContacts', list.innerHTML);
+
     }
 
     if (e.target.closest('.edit-icon')) {
+
         const inputEditName = e.target.closest('.edit-icon').parentElement.children[1];
+        const inputEditNumber = e.target.closest('.edit-icon').parentElement.children[2];
+
+        // nameValidation = inputEditName.value.length >= 3;
+        // validar(inputEditName, nameValidation);
+
         if (inputEditName.hasAttribute('readonly')) {
+
             inputEditName.removeAttribute('readonly');
             console.log(inputEditName.value);
+
         } else {
+
             inputEditName.setAttribute('readonly',true);
             inputEditName.setAttribute('value', inputEditName.value);
             console.log(inputEditName.value);
             localStorage.setItem('listContacts', list.innerHTML);
+
+        }
+
+        if (inputEditNumber.hasAttribute('readonly')) {
+
+            inputEditNumber.removeAttribute('readonly');
+            console.log(inputEditNumber.value);
+            
+        } else {
+
+            inputEditNumber.setAttribute('readonly',true);
+            inputEditNumber.setAttribute('value', inputEditNumber.value);
+            console.log(inputEditNumber.value);
+            localStorage.setItem('listContacts', list.innerHTML);
+
         }
     }
 })
@@ -102,5 +128,7 @@ list.addEventListener('click', e => {
 
 // Evento donde llamamos los datos guardados en el localStorage a la pagina
 window.onload = () => {
+
     list.innerHTML = localStorage.getItem('listContacts');
+    
 }
