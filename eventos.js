@@ -127,6 +127,7 @@ list.addEventListener('click', e => {
             inputEditNumber.setAttribute('readonly',true);
             inputEditNumber.setAttribute('value', inputEditNumber.value);
             console.log(inputEditNumber.value);
+            validar(inputEditNumber, numberValidation, EditBtn);
             localStorage.setItem('listContacts', list.innerHTML);
         }
     }

@@ -4,6 +4,10 @@
     display: none;
 }
 
+.check-icon{
+    display: none;
+}
+
 .svg{
     width: 1rem;
     height: 1rem;
