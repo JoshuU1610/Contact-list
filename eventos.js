@@ -6,7 +6,7 @@ const list = document.querySelector('#list');
 
 
 const NUMBER_REGEX = /^((412)|(212)|(414)|(424)|(416)|(426))[0-9]{7}$/;
-const NAME_REGEX = /^[A-Z][a-z]{2,}/;
+const NAME_REGEX = /^[A-Z][a-z]{2,}$/;
 
 
 // Funcion creada para validar que lo que esta dentro del input este bien puesto
@@ -18,7 +18,7 @@ const validar = (input, verification, btn) => {
         btn.disabled = true;
     }
 
-    const message = input.parentElement.children[1];
+    // const message = input.parentElement.children[1];
 
     if(!input){
         input.classList.remove('error');
@@ -34,7 +34,6 @@ const validar = (input, verification, btn) => {
         message.classList.add('show');
     }
 }
-
 
 // Variables para la validacion
 let numberValidation = false;
@@ -73,7 +72,7 @@ form.addEventListener('submit', e => {
       </svg>
 </button>
 <button class="check-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svg">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svg hidden">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>                  
 </button>
@@ -82,7 +81,7 @@ form.addEventListener('submit', e => {
     localStorage.setItem('listContacts', list.innerHTML);
 })
 
-const EditBtn = document.querySelector('.edit-icon')
+
 // Evento para elminar y editar
 list.addEventListener('click', e => {
 
@@ -103,38 +102,74 @@ list.addEventListener('click', e => {
 
     if (e.target.closest('.edit-icon')) {
 
+        const EditBtn = e.target.closest('.edit-icon');
         const inputEditName = e.target.closest('.edit-icon').parentElement.children[1];
         const inputEditNumber = e.target.closest('.edit-icon').parentElement.children[2];
-        nameValidation = NAME_REGEX.test(inputName.value);
-        numberValidation = NUMBER_REGEX.test(inputNumber.value);
+        nameValidation = NAME_REGEX.test(inputEditName.value);
+        numberValidation = NUMBER_REGEX.test(inputEditNumber.value);
 
         if (inputEditName.hasAttribute('readonly')) {
 
             inputEditName.removeAttribute('readonly');
-            
+
+            inputEditName.addEventListener('input', e => {
+
+                nameValidation = NAME_REGEX.test(inputEditName.value);
+
+                if(!inputEditName){
+                    inputEditName.classList.remove('error');
+                    inputEditName.classList.remove('success');
+                } else if (nameValidation) {
+                    inputEditName.classList.remove('error');
+                    inputEditName.classList.add('success');
+                    EditBtn.disabled = false;
+                } else {
+                    inputEditName.classList.add('error');
+                    inputEditName.classList.remove('success');
+                    EditBtn.disabled = true;
+                }
+            });
 
         } else {
-
             inputEditName.setAttribute('readonly',true);
             inputEditName.setAttribute('value', inputEditName.value);
+            inputEditName.classList.remove('error');
+            inputEditName.classList.remove('success');
             localStorage.setItem('listContacts', list.innerHTML);
-            validar(inputEditName, nameValidation, EditBtn);
-            console.log(validar);
         }
+
 
         if (inputEditNumber.hasAttribute('readonly')) {
 
             inputEditNumber.removeAttribute('readonly');
-            console.log(inputEditNumber.value);
+            inputEditNumber.addEventListener('input', e => {
+
+                numberValidation = NUMBER_REGEX.test(inputEditNumber.value);
+        
+                if(!inputEditNumber){
+                    inputEditNumber.classList.remove('error');
+                    inputEditNumber.classList.remove('success');
+                } else if (numberValidation) {
+                    inputEditNumber.classList.remove('error');
+                    inputEditNumber.classList.add('success');
+                    EditBtn.disabled = false;
+                } else {
+                    inputEditNumber.classList.add('error');
+                    inputEditNumber.classList.remove('success');
+                    EditBtn.disabled = true;
+                }
+
+            });
             
         } else {
-
             inputEditNumber.setAttribute('readonly',true);
             inputEditNumber.setAttribute('value', inputEditNumber.value);
-            console.log(inputEditNumber.value);
-            validar(inputEditNumber, numberValidation, EditBtn);
+            inputEditNumber.classList.remove('error');
+            inputEditNumber.classList.remove('success');
             localStorage.setItem('listContacts', list.innerHTML);
         }
+
+
     }
 })
 
