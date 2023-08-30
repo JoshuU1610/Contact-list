@@ -61,7 +61,7 @@ form.addEventListener('submit', e => {
     li.innerHTML = `
     <div class="list-inputs">
     <input type="text" value="${inputName.value}" readonly>
-    <input type="text" value="${inputNumber.value}" readonly>
+    <input type="number" value="${inputNumber.value}" readonly>
 </div>
 
 <div class="list-buttons">
