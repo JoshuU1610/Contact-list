@@ -18,9 +18,9 @@ const validar = (input, verification, btn) => {
         btn.disabled = true;
     }
 
-    // const message = input.parentElement.children[1];
+    const message = input.parentElement.children[2];
 
-    if(!input){
+    if(!input.value){
         input.classList.remove('error');
         input.classList.remove('success');
         message.classList.remove('show');
