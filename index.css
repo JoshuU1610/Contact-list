@@ -65,7 +65,7 @@ body{
     transition: 0.5s;
     font-size: 0.65rem;
     padding: 0 10px;
-    background-color: #e1e3db;
+    background-color: white;
     border-left: 1px solid rgb(0, 0, 0);
     border-right: 1px solid rgb(0, 0, 0);
     letter-spacing: 0.2rem;
@@ -294,4 +294,9 @@ body{
     .input-container input{
         width: 60%;
     }
+
+    .input-container input:valid ~ span,
+    .input-container input:focus ~ span{
+        background-color: #e1e3db;
+    } 
 }
