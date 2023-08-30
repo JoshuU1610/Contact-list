@@ -60,8 +60,8 @@ form.addEventListener('submit', e => {
     const li = document.createElement('li');
     li.innerHTML = `
     <div class="list-inputs">
-    <input type="text" value="${inputName.value}" readonly>
-    <input type="number" value="${inputNumber.value}" readonly>
+    <input type="text" value="${inputName.value}" autocomplete="off" readonly>
+    <input type="number" value="${inputNumber.value}" autocomplete="off" readonly>
 </div>
 
 <div class="list-buttons">
@@ -82,6 +82,7 @@ form.addEventListener('submit', e => {
     `;
     list.append(li);
     localStorage.setItem('listContacts', list.innerHTML);
+    window.location.reload()
 })
 
 

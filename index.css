@@ -18,6 +18,8 @@ html, body {
 
 body{
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 #form{
@@ -27,15 +29,16 @@ body{
 }
 
 .input-container{
+    display: flex;
+    justify-content: center;
     position: relative;
-    width: 80%;
-    margin: 2rem auto;
+    margin: 2rem;
 }
 
 .input-container input{
     width: 100%;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     background-color: #cacaca00;
     border-radius: 5px;
     /* outline: none; */
@@ -57,12 +60,12 @@ body{
 
 .input-container input:valid ~ span,
 .input-container input:focus ~ span {
-    color: rgb(108, 108, 108);
+    color: rgb(55, 55, 55);
     transform: translate(10px) translateY(-7px);
     transition: 0.5s;
     font-size: 0.65rem;
     padding: 0 10px;
-    background-color: #ffffff;
+    background-color: #e1e3db;
     border-left: 1px solid rgb(0, 0, 0);
     border-right: 1px solid rgb(0, 0, 0);
     letter-spacing: 0.2rem;
@@ -70,7 +73,7 @@ body{
 
 .input-container input:valid,
 .input-container input:focus {
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
 }
 
 #form-btn:disabled{
@@ -137,7 +140,7 @@ body{
     text-align: center;
     border-radius: 10px 25px 0;
     border-radius: 10px;
-    background: #62a07b;
+    background: #e1e3db;
     padding: 26px;
     box-shadow: 3px 3px 10px rgba(0,0,0,.05);
     gap: 2rem;
@@ -149,7 +152,7 @@ body{
     width: 60%;
     text-align: justify;
     background-color: transparent;
-    color: white;
+    color: black;
     text-align: center;
     justify-content: center;
     padding: 1rem;
@@ -161,11 +164,11 @@ body{
 #list li input {
     width: 60%;
     padding: 10px;
-    border: 1px solid white;
+    border: 1px solid rgb(0, 0, 0);
     background-color: #cacaca00;
     border-radius: 5px;
     /* outline: none; */
-    color: white;
+    color: black;
     transition: 0.5s;
     font-size: 1.2rem;
 }
@@ -215,6 +218,7 @@ body{
 
 .edit-icon:disabled{
     background-color: rgba(74, 74, 74, 0.58);
+    border: none;
 }
 
 .check-icon{
@@ -257,6 +261,11 @@ body{
     .list-inputs{
         flex-direction: row;
     }
+
+    .input-container{
+        width: 80%;
+        margin: 2rem auto;
+    }
 }
 
 @media (min-width: 1024px){
@@ -266,12 +275,20 @@ body{
 
     #form{
         display: flex;
-        flex-direction: row;
         width: 100%;
+        background-color: #e1e3db;
+        padding: 2rem;
+        border-radius: 0rem 0rem 5rem 5rem;
     }
     
+    #form-btn, #form-btn:disabled{
+        margin: 2rem;
+    }
+
     .input-container{
-        margin: auto 0;
+        display: block;
+        margin: 1rem;
+        width: 80%;
     }
 
     .input-container input{
