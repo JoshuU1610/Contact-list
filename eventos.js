@@ -6,7 +6,7 @@ const list = document.querySelector('#list');
 
 
 const NUMBER_REGEX = /^((412)|(212)|(414)|(424)|(416)|(426))[0-9]{7}$/;
-const NAME_REGEX = /^[A-Z][a-z]{2,}$/;
+const NAME_REGEX = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]{2,}$/;
 
 
 // Funcion creada para validar que lo que esta dentro del input este bien puesto
