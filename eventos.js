@@ -10,13 +10,7 @@ const NAME_REGEX = /^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]{2,}$/;
 
 
 // Funcion creada para validar que lo que esta dentro del input este bien puesto
-const validar = (input, verification, btn) => {
-
-    if (nameValidation && numberValidation) {
-        btn.disabled = false;
-    } else {
-        btn.disabled = true;
-    }
+const validar = (input, verification) => {
 
     const message = input.parentElement.children[2];
 
@@ -33,6 +27,8 @@ const validar = (input, verification, btn) => {
         input.classList.remove('success');
         message.classList.add('show');
     }
+
+    
 }
 
 // Variables para la validacion
@@ -43,14 +39,24 @@ let nameValidation = false;
 inputName.addEventListener('input', e => {
     // console.log(e.target.value);
     nameValidation = NAME_REGEX.test(inputName.value);
-    validar(inputName, nameValidation, formBtn);
+    validar(inputName, nameValidation);
+    if (nameValidation && numberValidation) {
+        formBtn.disabled = false;
+    } else {
+        formBtn.disabled = true;
+    }
 });
 
 // Evento donde se llama al input del numero 
 inputNumber.addEventListener('input', e => {
     // console.log(e.target.value);
     numberValidation = NUMBER_REGEX.test(inputNumber.value);
-    validar(inputNumber, numberValidation, formBtn);
+    validar(inputNumber, numberValidation);
+    if (nameValidation && numberValidation) {
+        formBtn.disabled = false;
+    } else {
+        formBtn.disabled = true;
+    }
 });
 
 
@@ -123,7 +129,7 @@ list.addEventListener('click', e => {
                 if(!inputEditName){
                     inputEditName.classList.remove('error');
                     inputEditName.classList.remove('success');
-                } else if (nameValidation) {
+                } else if (numberValidation && nameValidation) {
                     inputEditName.classList.remove('error');
                     inputEditName.classList.add('success');
                     EditBtn.disabled = false;
@@ -153,7 +159,7 @@ list.addEventListener('click', e => {
                 if(!inputEditNumber){
                     inputEditNumber.classList.remove('error');
                     inputEditNumber.classList.remove('success');
-                } else if (numberValidation) {
+                } else if (numberValidation && nameValidation) {
                     inputEditNumber.classList.remove('error');
                     inputEditNumber.classList.add('success');
                     EditBtn.disabled = false;
@@ -172,8 +178,6 @@ list.addEventListener('click', e => {
             inputEditNumber.classList.remove('success');
             localStorage.setItem('listContacts', list.innerHTML);
         }
-
-
     }
 })
 
