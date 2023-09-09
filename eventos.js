@@ -32,15 +32,16 @@ const validar = (input, verification) => {
 }
 
 // Variables para la validacion
-let numberValidation = false;
-let nameValidation = false;
+let numberValidation1 = false;
+let nameValidation1 = false;
 
 // Evento donde se llama al input del nombre 
 inputName.addEventListener('input', e => {
     // console.log(e.target.value);
-    nameValidation = NAME_REGEX.test(inputName.value);
-    validar(inputName, nameValidation);
-    if (nameValidation && numberValidation) {
+    nameValidation1 = NAME_REGEX.test(inputName.value);
+    validar(inputName, nameValidation1);
+
+    if (nameValidation1 && numberValidation1) {
         formBtn.disabled = false;
     } else {
         formBtn.disabled = true;
@@ -50,9 +51,9 @@ inputName.addEventListener('input', e => {
 // Evento donde se llama al input del numero 
 inputNumber.addEventListener('input', e => {
     // console.log(e.target.value);
-    numberValidation = NUMBER_REGEX.test(inputNumber.value);
-    validar(inputNumber, numberValidation);
-    if (nameValidation && numberValidation) {
+    numberValidation1 = NUMBER_REGEX.test(inputNumber.value);
+    validar(inputNumber, numberValidation1);
+    if (nameValidation1 && numberValidation1) {
         formBtn.disabled = false;
     } else {
         formBtn.disabled = true;
@@ -115,8 +116,8 @@ list.addEventListener('click', e => {
         const EditBtn = e.target.closest('.edit-icon');
         const inputEditName = e.target.closest('.edit-icon').parentElement.parentElement.children[0].children[0];
         const inputEditNumber = e.target.closest('.edit-icon').parentElement.parentElement.children[0].children[1];
-        nameValidation = NAME_REGEX.test(inputEditName.value);
-        numberValidation = NUMBER_REGEX.test(inputEditNumber.value);
+        let nameValidation = NAME_REGEX.test(inputEditName.value);
+        let numberValidation = NUMBER_REGEX.test(inputEditNumber.value);
 
         if (inputEditName.hasAttribute('readonly')) {
 
