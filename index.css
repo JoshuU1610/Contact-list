@@ -268,8 +268,16 @@ body{
 }
 
 @media (min-width: 768px){
+    #form{
+        width: 70%;
+    }
+
     #list{
-        padding: 4rem;
+        padding: 2rem;
+    }
+
+    #list li {
+        width: 70%;
     }
 
     .list-inputs{
@@ -284,33 +292,14 @@ body{
 
 @media (min-width: 1024px){
     #list li{
-        width: calc(50% - 1rem);
+        width: calc(40% - 1rem);
+    }
+
+    #list{
+        padding: 1rem 4rem;
     }
 
     #form{
-        display: flex;
-        width: 100%;
-        background-color: #e1e3db;
-        padding: 2rem;
-        border-radius: 0rem 0rem 5rem 5rem;
+        margin: 2rem auto;
     }
-    
-    #form-btn, #form-btn:disabled{
-        margin: 2rem;
-    }
-
-    .input-container{
-        display: block;
-        margin: 1rem;
-        width: 80%;
-    }
-
-    .input-container input{
-        width: 60%;
-    }
-
-    .input-container input:valid ~ span,
-    .input-container input:focus ~ span{
-        background-color: #e1e3db;
-    } 
 }
