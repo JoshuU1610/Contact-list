@@ -114,6 +114,7 @@ list.addEventListener('click', e => {
     if (e.target.closest('.edit-icon')) {
 
         const EditBtn = e.target.closest('.edit-icon');
+        const contInputs = e.target.closest('.edit-icon').parentElement.parentElement.children[0];
         const inputEditName = e.target.closest('.edit-icon').parentElement.parentElement.children[0].children[0];
         const inputEditNumber = e.target.closest('.edit-icon').parentElement.parentElement.children[0].children[1];
         let nameValidation = NAME_REGEX.test(inputEditName.value);
@@ -122,7 +123,7 @@ list.addEventListener('click', e => {
         if (inputEditName.hasAttribute('readonly')) {
 
             inputEditName.removeAttribute('readonly');
-
+            contInputs.setAttribute('style', 'gap: 1rem');
             inputEditName.addEventListener('input', e => {
 
                 nameValidation = NAME_REGEX.test(inputEditName.value);
@@ -146,6 +147,7 @@ list.addEventListener('click', e => {
             inputEditName.setAttribute('value', inputEditName.value);
             inputEditName.classList.remove('error');
             inputEditName.classList.remove('success');
+            contInputs.removeAttribute('style', 'gap: 1rem');
             localStorage.setItem('listContacts', list.innerHTML);
         }
 
@@ -153,6 +155,7 @@ list.addEventListener('click', e => {
         if (inputEditNumber.hasAttribute('readonly')) {
 
             inputEditNumber.removeAttribute('readonly');
+
             inputEditNumber.addEventListener('input', e => {
 
                 numberValidation = NUMBER_REGEX.test(inputEditNumber.value);
@@ -184,8 +187,8 @@ list.addEventListener('click', e => {
 
 
 // Evento donde llamamos los datos guardados en el localStorage a la pagina
-window.onload = () => {
+// window.onload = () => {
 
-    list.innerHTML = localStorage.getItem('listContacts');
+//     list.innerHTML = localStorage.getItem('listContacts');
     
-}
+// }
