@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact list</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form id="form">
+        <div class="input-container">
+            <input class="Input-reg" type="text" id="input-name" autocomplete="off">
+            <span>Nombre</span>
+            <p class="input-text-message">Tiene que se mayor a 3 caracteres, un solo nombre y primera letra en mayusculas</p>
+        </div>
+        <div class="input-container">
+            <input class="Input-reg" type="number" id="input-number" autocomplete="off">
+            <span>Numero de telefono</span>
+            <p class="input-text-message">Numero Venezolano 212xxxxxxx</p>
+        </div>
+        
+        <button id="form-btn" disabled>Añadir</button>
+    </form>
+    <div id="main-title">
+        <p>contactos</p>
+    </div>
+    <ul id="list">
+        
+    </ul>
+    <script src="eventos.js"></script>
+</body>
+</html>
