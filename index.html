@@ -1,41 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact list</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
 </head>
 <body>
-    <form id="form">
-        <div class="input-container">
-            <input class="Input-reg" type="text" id="input-name" autocomplete="off">
-            <span>Nombre</span>
-            <p class="input-text-message">Tiene que se mayor a 3 caracteres, un solo nombre y primera letra en mayusculas</p>
-        </div>
-        <div class="input-container">
-            <input class="Input-reg" type="number" id="input-number" autocomplete="off">
-            <span>Numero de telefono</span>
-            <p class="input-text-message">Numero Venezolano 212xxxxxxx</p>
-        </div>
+    <div class="notification">
         
-        <button id="form-btn" disabled>Añadir</button>
-    </form>
-    <div id="main-title">
-        <p>contactos</p>
     </div>
-    <ul id="list">
-        
-    </ul>
-    <script src="eventos.js"></script>
+    <div class="wrapper">
+
+        <form action="" id="form-log" style="display: none;">
+
+          <h1>Login</h1>
+
+          <div class="input-box">
+            <input type="text" placeholder="Username" required id="user-log">
+            <i class='bx bxs-user'></i>
+          </div>
+
+          <div class="input-box">
+            <input type="password" placeholder="Password" required id="password-log">
+            <i class='bx bxs-lock-alt' ></i>
+          </div>
+
+          <button type="submit" class="btn" id="login-btn">Login</button>
+
+          <div class="register-link">
+
+            <p>Dont have an account? <a id="reg-link">Register</a></p>
+
+          </div>
+
+        </form>
+
+        <form action="" id="form-regis">
+
+            <h1>Register</h1>
+  
+            <div class="input-box">
+              <input type="text" placeholder="Username" required id="user-reg">
+              <i class='bx bxs-user'></i>
+            </div>
+  
+            <div class="input-box">
+              <input type="password" placeholder="Password" required id="pass-reg">
+              <i class='bx bxs-lock-alt' ></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" required id="pass-reg2">
+                <i class='bx bxs-lock-alt' ></i>
+              </div>
+  
+            <button type="submit" class="btn">Register</button>
+  
+            <div class="register-link">
+  
+              <p>You have an account? <a id="log-link">Login</a></p>
+  
+            </div>
+  
+          </form>
+
+      </div>
+    <script src="app.js"></script>
 </body>
 </html>
