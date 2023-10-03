@@ -23,14 +23,104 @@ body{
     background-color: #072E33;
 }
 
+.container{
+    width: 20%;
+    min-height: 100vh;
+}
+
+.sidebar{
+    width: 256px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 24px;
+    font-family: 'Julius Sans One', sans-serif;
+    border-radius: 31px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.sidebar .head{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.user-details p{
+    margin: 0;
+}
+
+.user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.user-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu .title,
+.user-details .title{
+    font-size: 10px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.user-details .name{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.menu ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.menu ul li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.menu ul li:hover a,
+.menu ul li.active a{
+    color: #000;
+    background-color: #f6f6f6;
+}
+
+.menu ul li .icon{
+    font-size: 20px;
+}
+
+#myUl{
+    margin: 0;
+    padding: 0;
+}
+
 #form{
     display: flex;
     flex-direction: column;
     width: 90%;
-    background-color: #0C7075;
+    background-color: #0c707500;
     margin: 1rem auto;
     border-radius: 1rem;
     padding: 1rem;
+    border: 2px solid #fff;
 }
 
 .input-container{
@@ -69,7 +159,7 @@ body{
     transition: 0.5s;
     font-size: 0.5rem;
     padding: 0 10px;
-    background-color: #3D737F;
+    background-color: #072E33;
     border-left: 1px solid white;
     border-right: 1px solid white;
     letter-spacing: 0.2rem;
