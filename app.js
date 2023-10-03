@@ -99,5 +99,3 @@ formLog.addEventListener('submit', async e => {
         inputPasswordLog.value = '';
     }
 });
-
-
