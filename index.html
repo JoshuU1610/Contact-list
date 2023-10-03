@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=PT+Sans+Narrow:wght@700&family=Rajdhani:wght@700&family=Roboto&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>
     <div class="notification">
-        
+      <div id="modal-noti">
+        <p>error</p>
+        <button>Alert</button>
+      </div>
     </div>
     <div class="wrapper">
 
-        <form action="" id="form-log" style="display: none;">
+        <form action="#" id="form-log">
 
           <h1>Login</h1>
 
           <div class="input-box">
-            <input type="text" placeholder="Username" required id="user-log">
+            <input type="text" placeholder="Username" id="user-log">
             <i class='bx bxs-user'></i>
           </div>
 
           <div class="input-box">
-            <input type="password" placeholder="Password" required id="password-log">
+            <input type="password" placeholder="Password" id="password-log">
             <i class='bx bxs-lock-alt' ></i>
           </div>
 
@@ -36,22 +42,22 @@
 
         </form>
 
-        <form action="" id="form-regis">
+        <form action="#" id="form-regis">
 
             <h1>Register</h1>
   
             <div class="input-box">
-              <input type="text" placeholder="Username" required id="user-reg">
+              <input type="text" placeholder="Username" id="user-reg">
               <i class='bx bxs-user'></i>
             </div>
   
             <div class="input-box">
-              <input type="password" placeholder="Password" required id="pass-reg">
+              <input type="password" placeholder="Password" id="pass-reg">
               <i class='bx bxs-lock-alt' ></i>
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="Confirm Password" required id="pass-reg2">
+                <input type="password" placeholder="Confirm Password" id="pass-reg2">
                 <i class='bx bxs-lock-alt' ></i>
               </div>
   
