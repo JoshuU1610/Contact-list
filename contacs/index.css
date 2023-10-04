@@ -21,6 +21,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #072E33;
+    overflow: hidden;
 }
 
 .container{
@@ -352,10 +353,12 @@ body{
 
 .contacts{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    max-height: 100vh; /* Establece la altura máxima deseada */
+    overflow-y: auto;
 }
 
 .contacts h1{
@@ -388,6 +391,23 @@ body{
     transition: 0.5s;
 }
 
+#name-edit:disabled{
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 500;
+    margin-left: 1rem;
+    padding: 0;
+}
+
+#number-edit:disabled{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    padding: 0;
+}
+
 .contact input:disabled{
     border: none;
 }
@@ -398,11 +418,40 @@ body{
 }
 
 .buttons button{
-    color: #cbcbcb;
+    color: #fff;
     background-color: #072E33;
     padding: 1rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
+
+#delete{
+    background-color: #f00;
+}
+
+#edit {
+    background-color: #acbb29;
+}
+
+#save{
+    background-color: #519548;
+}
+
+#save:disabled{
+    background-color: #072E33;
+}
+
+.contacts, .form {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+  
+.visible {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+ }
 
 .svg{
     width: 1rem;
@@ -444,6 +493,14 @@ body{
     font-family: 'Julius Sans One', sans-serif;
 }
 
+.titu{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (min-width: 768px){
     #form{
         width: 70%;
@@ -468,8 +525,20 @@ body{
 }
 
 @media (min-width: 1024px){
-    #list li{
-        width: calc(40% - 1rem);
+    .contacts{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact h1{
+        width: 100%;
+    }
+
+    .contact{
+        width: calc(30% - 1rem);
     }
 
     #list{
