@@ -4,7 +4,43 @@
       "username": "JoshuU1610",
       "password": "Josem16102004",
       "id": 1
+    },
+    {
+      "username": "Rafa",
+      "password": "123",
+      "id": 2
     }
   ],
-  "Contacs": []
+  "Contacs": [
+    {
+      "name": "Andrea",
+      "number": "4141234567",
+      "user": "JoshuU1610",
+      "id": 3
+    },
+    {
+      "name": "Jose",
+      "number": "4141409184",
+      "user": "Rafa",
+      "id": 4
+    },
+    {
+      "name": "Andres",
+      "number": "2128644675",
+      "user": "JoshuU1610",
+      "id": 5
+    },
+    {
+      "name": "Jose",
+      "number": "2121234567",
+      "user": "JoshuU1610",
+      "id": 6
+    },
+    {
+      "name": "Jade",
+      "number": "4261234567",
+      "user": "JoshuU1610",
+      "id": 7
+    }
+  ]
 }
