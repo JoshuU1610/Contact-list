@@ -120,13 +120,12 @@ body{
 #modal-noti{
   border-radius: 1rem;
   width: 30%;
-  height: 30%;
-  background: #ffffff;
+  height: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #000;
+  color: #fff;
   font-family: 'Julius Sans One', sans-serif;
 }
 
@@ -141,7 +140,6 @@ body{
 #modal-noti button{
   width: 100%;
   height: 45px;
-  background: #d6ed06;
   border: none;
   outline: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -152,4 +150,16 @@ body{
 
 .show{
   opacity: 1;
+}
+
+.good{
+  background-color: #408156;
+}
+
+.bad{
+  background: #bd2a33;
+}
+
+.alert{
+  background: #facb4b;
 }
