@@ -9,6 +9,16 @@
       "username": "Rafa",
       "password": "123",
       "id": 2
+    },
+    {
+      "username": "Shensito",
+      "password": "iloveyaoi123",
+      "id": 3
+    },
+    {
+      "username": "a",
+      "password": "a",
+      "id": 4
     }
   ],
   "Contacs": [
@@ -41,6 +51,18 @@
       "number": "4261234567",
       "user": "JoshuU1610",
       "id": 7
+    },
+    {
+      "name": "Toston",
+      "number": "4242566835",
+      "user": "Shensito",
+      "id": 9
+    },
+    {
+      "name": "Elamordemivida",
+      "number": "4143710709",
+      "user": "JoshuU1610",
+      "id": 10
     }
   ]
 }
