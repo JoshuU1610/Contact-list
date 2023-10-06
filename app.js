@@ -29,22 +29,28 @@ formReg.addEventListener('submit', async e => {
   const user = response.find(user => user.username === inputUserReg.value);
 
   if (inputUserReg.value === '' || inputPasswordReg.value === '' || inputConfirmPass.value === '') {
-    modalNoti.innerHTML = '<p>Inputs cannot be empty</p>  <button>Alert</button>';
+    modalNoti.innerHTML = '<p>Inputs cannot be empty</p>';
     notification.classList.add('show');
+    modalNoti.classList.add('alert');
     setTimeout(() => {
       notification.classList.remove('show');
+      modalNoti.classList.remove('alert');
     }, 2000);
   } else if (inputPasswordReg.value !== inputConfirmPass.value) {
-    modalNoti.innerHTML = '<p>Passwords do not match</p>  <button>Alert</button>';
+    modalNoti.innerHTML = '<p>Passwords do not match</p>';
     notification.classList.add('show');
+    modalNoti.classList.add('alert');
     setTimeout(() => {
       notification.classList.remove('show');
+      modalNoti.classList.remove('alert');
     }, 2000);
   } else if (user) {
-    modalNoti.innerHTML = '<p>User already exists</p>  <button>Alert</button>';
+    modalNoti.innerHTML = '<p>User already exists</p>';
     notification.classList.add('show');
+    modalNoti.classList.add('alert');
     setTimeout(() => {
       notification.classList.remove('show');
+      modalNoti.classList.remove('alert');
     }, 2000);
   } else {
     await fetch('http://localhost:3004/users', {
@@ -58,10 +64,12 @@ formReg.addEventListener('submit', async e => {
       }),
     });
 
-    modalNoti.innerHTML = `<p>The user ${inputUserReg.value} was created</p>  <button>Alert</button>`;
+    modalNoti.innerHTML = `<p>The user ${inputUserReg.value} was created</p>`;
     notification.classList.add('show');
+    modalNoti.classList.add('good');
     setTimeout(() => {
       notification.classList.remove('show');
+      modalNoti.classList.remove('good');
     }, 2000);
 
     inputUserReg.value = '';
@@ -81,16 +89,20 @@ formLog.addEventListener('submit', async e => {
     const password = user ? user.password : null; // Obtén la contraseña del usuario si se encuentra, de lo contrario, establece en null.
 
     if (!user) {
-        modalNoti.innerHTML = '<p>Username does not exist</p>  <button>Alert</button>';
+        modalNoti.innerHTML = '<p>Username does not exist</p>';
         notification.classList.add('show');
+        modalNoti.classList.add('alert');
         setTimeout(() => {
             notification.classList.remove('show');
+            modalNoti.classList.remove('alert');
         }, 2000);
     } else if (password !== inputPasswordLog.value) {
-        modalNoti.innerHTML = '<p>Passwords do not match</p>  <button>Alert</button>';
+        modalNoti.innerHTML = '<p>Passwords do not match</p>';
         notification.classList.add('show');
+        modalNoti.classList.add('bad');
         setTimeout(() => {
             notification.classList.remove('show');
+            modalNoti.classList.remove('bad');
         }, 2000);
     } else {
         localStorage.setItem('user', JSON.stringify(user));
