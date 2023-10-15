@@ -2,7 +2,7 @@
   "users": [
     {
       "username": "JoshuU1610",
-      "password": "Josem16102004",
+      "password": "Josemiguel",
       "id": 1
     },
     {
@@ -57,12 +57,6 @@
       "number": "4242566835",
       "user": "Shensito",
       "id": 9
-    },
-    {
-      "name": "Elamordemivida",
-      "number": "4143710709",
-      "user": "JoshuU1610",
-      "id": 10
     }
   ]
 }
